@@ -1,0 +1,19 @@
+package com.github.xuchengen.web;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+
+/**
+ * <p></p>
+ * <p>作者：徐承恩</p>
+ * <p>邮箱：<a href="mailto:xuchengen@gmail.com">xuchengen@gmail.com</a></p>
+ * <p>日期：2022-08-21 17:49</p>
+ **/
+@Controller
+public class IndexAction {
+
+    @GetMapping(value = "/")
+    public String index() {
+        return "redirect:/services";
+    }
+}
