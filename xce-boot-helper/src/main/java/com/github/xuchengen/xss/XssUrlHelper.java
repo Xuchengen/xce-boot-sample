@@ -10,10 +10,10 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * <p>XSS攻击处理URL路径中携带变量</p>
- * <p>作者：徐承恩</p>
- * <p>邮箱：<a href="mailto:xuchengen@gmail.com">xuchengen@gmail.com</a></p>
- * <p>日期：2022-08-21 15:19</p>
+ * <p>XSS攻击处理URL路径中携带变量
+ * <p>作者：徐承恩
+ * <p>邮箱：<a href="mailto:xuchengen@gmail.com">xuchengen@gmail.com
+ * <p>日期：2022-08-21 15:19
  **/
 public class XssUrlHelper extends UrlPathHelper {
 

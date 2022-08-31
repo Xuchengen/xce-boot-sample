@@ -12,10 +12,10 @@ import java.util.Date;
 import java.util.Map;
 
 /**
- * <p>用户接口</p>
- * <p>作者：徐承恩</p>
- * <p>邮箱：<a href="mailto:xuchengen@gmail.com">xuchengen@gmail.com</a></p>
- * <p>日期：2022-08-15 17:51</p>
+ * <p>用户接口
+ * <p>作者：徐承恩
+ * <p>邮箱：<a href="mailto:xuchengen@gmail.com">xuchengen@gmail.com
+ * <p>日期：2022-08-15 17:51
  **/
 @RestController
 @RequestMapping("/api/user")

@@ -1,29 +1,41 @@
 package com.github.xuchengen.model;
 
-import java.math.BigDecimal;
+import javax.persistence.*;
+import java.io.Serializable;
 import java.util.Date;
 
 /**
- * <p>用户信息
+ * <p>用户表模型
  * <p>作者：徐承恩
  * <p>邮箱：<a href="mailto:xuchengen@gmail.com">xuchengen@gmail.com
- * <p>日期：2022-08-20 14:06
+ * <p>日期：2022-08-23 13:33
  **/
-public class UserVO {
+@Entity(name = "t_user")
+public class UserDO implements Serializable {
 
-    private Integer id;
+    private static final long serialVersionUID = 2683133812637972L;
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    @Column(nullable = false)
     private String name;
-    private String niceName;
-    private String email;
-    private BigDecimal balance;
 
+    @Column(nullable = false)
+    private String email;
+
+    @Column(nullable = false)
     private Date createTime;
 
-    public Integer getId() {
+    @Column(nullable = false)
+    private Date updateTime;
+
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -35,28 +47,12 @@ public class UserVO {
         this.name = name;
     }
 
-    public String getNiceName() {
-        return niceName;
-    }
-
-    public void setNiceName(String niceName) {
-        this.niceName = niceName;
-    }
-
     public String getEmail() {
         return email;
     }
 
     public void setEmail(String email) {
         this.email = email;
-    }
-
-    public BigDecimal getBalance() {
-        return balance;
-    }
-
-    public void setBalance(BigDecimal balance) {
-        this.balance = balance;
     }
 
     public Date getCreateTime() {
@@ -67,15 +63,22 @@ public class UserVO {
         this.createTime = createTime;
     }
 
+    public Date getUpdateTime() {
+        return updateTime;
+    }
+
+    public void setUpdateTime(Date updateTime) {
+        this.updateTime = updateTime;
+    }
+
     @Override
     public String toString() {
-        return "UserVO{" +
+        return "UserDO{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
-                ", niceName='" + niceName + '\'' +
                 ", email='" + email + '\'' +
-                ", balance=" + balance +
                 ", createTime=" + createTime +
+                ", updateTime=" + updateTime +
                 '}';
     }
 }

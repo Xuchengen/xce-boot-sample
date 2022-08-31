@@ -5,9 +5,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 /**
  * <p>
- * 作者: 徐承恩<p>
- * 邮箱: <a href="mailto:xuchengen@gmail.com">xuchengen@gmail.com</a><p>
- * 日期: 2022-08-15 14:27
+ * <p>作者：徐承恩
+ * <p>邮箱：<a href="mailto:xuchengen@gmail.com">xuchengen@gmail.com
+ * <p>日期：2022-08-23 14:23
  **/
 @Controller
 public class IndexAction {

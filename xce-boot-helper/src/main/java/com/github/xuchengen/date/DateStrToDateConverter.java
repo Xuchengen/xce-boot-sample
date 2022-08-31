@@ -7,10 +7,10 @@ import org.springframework.core.convert.converter.Converter;
 import java.util.Date;
 
 /**
- * <p>日期字符串转日期类型</p>
- * <p>作者：徐承恩</p>
- * <p>邮箱：<a href="mailto:xuchengen@gmail.com">xuchengen@gmail.com</a></p>
- * <p>日期：2022-08-21 16:02</p>
+ * <p>日期字符串转日期类型
+ * <p>作者：徐承恩
+ * <p>邮箱：<a href="mailto:xuchengen@gmail.com">xuchengen@gmail.com
+ * <p>日期：2022-08-21 16:02
  **/
 public class DateStrToDateConverter implements Converter<String, Date> {
     @Override

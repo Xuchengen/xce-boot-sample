@@ -6,10 +6,10 @@ import cn.hutool.core.date.DateUtil;
 import cn.hutool.core.util.NumberUtil;
 
 /**
- * <p>日期工具</p>
- * <p>作者：徐承恩</p>
- * <p>邮箱：<a href="mailto:xuchengen@gmail.com">xuchengen@gmail.com</a></p>
- * <p>日期：2022-08-20 19:40</p>
+ * <p>日期工具
+ * <p>作者：徐承恩
+ * <p>邮箱：<a href="mailto:xuchengen@gmail.com">xuchengen@gmail.com
+ * <p>日期：2022-08-20 19:40
  **/
 public abstract class DateTool {
 

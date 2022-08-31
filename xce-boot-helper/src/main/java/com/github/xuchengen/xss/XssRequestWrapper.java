@@ -10,10 +10,10 @@ import java.util.Enumeration;
 import java.util.List;
 
 /**
- * <p>XSS攻击请求包装器</p>
- * <p>作者：徐承恩</p>
- * <p>邮箱：<a href="mailto:xuchengen@gmail.com">xuchengen@gmail.com</a></p>
- * <p>日期：2022-08-20 15:20</p>
+ * <p>XSS攻击请求包装器
+ * <p>作者：徐承恩
+ * <p>邮箱：<a href="mailto:xuchengen@gmail.com">xuchengen@gmail.com
+ * <p>日期：2022-08-20 15:20
  **/
 public class XssRequestWrapper extends HttpServletRequestWrapper {
 
