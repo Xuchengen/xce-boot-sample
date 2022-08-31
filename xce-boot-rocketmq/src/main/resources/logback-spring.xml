@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<configuration>
+    <!-- 上下文名称 -->
+    <contextName>web</contextName>
+
+    <!-- 定义字符集属性 -->
+    <property name="CHARSET" value="UTF-8"/>
+
+    <!-- 定义文件路径属性（使用spring boot已经定义的环境变量） -->
+    <property name="FILE_PATH" value="${LOG_PATH}"/>
+
+    <!-- 定义控制台日志格式属性 -->
+    <property name="CONSOLE_PATTERN"
+              value="[%d{yyyy-MM-dd HH:mm:ss.SSS}] [%t] [%clr(%p)] [%clr(%logger{15}){cyan}]: %m%n${LOG_EXCEPTION_CONVERSION_WORD:-%wex}"/>
+
+    <!-- 定义文件日志格式属性 -->
+    <property name="FILE_PATTERN"
+              value="[%d{yyyy-MM-dd HH:mm:ss.SSS}] [%t] [%p] [%logger{15}]: %m%n${LOG_EXCEPTION_CONVERSION_WORD:-%wex}"/>
+
+    <!-- 彩色日志渲染引擎 -->
+    <conversionRule conversionWord="clr" converterClass="org.springframework.boot.logging.logback.ColorConverter"/>
+    <conversionRule conversionWord="wex"
+                    converterClass="org.springframework.boot.logging.logback.ExtendedWhitespaceThrowableProxyConverter"/>
+
+    <!-- 控制台输出 -->
+    <appender name="console" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>${CONSOLE_PATTERN}</pattern>
+            <charset>${CHARSET}</charset>
+        </encoder>
+    </appender>
+
+    <!-- WEB层文件输出 -->
+    <appender name="web" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${FILE_PATH}/web.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${FILE_PATH}/%d{yyyy-MM-dd}/web.%i.log</fileNamePattern>
+            <!-- 按时间回滚的同时，按文件大小来回滚 -->
+            <timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+                <maxFileSize>100MB</maxFileSize>
+            </timeBasedFileNamingAndTriggeringPolicy>
+            <!-- 保留最近90天日志 -->
+            <maxHistory>90</maxHistory>
+            <!-- 日志文件上限达到该值会删除旧日志 -->
+            <totalSizeCap>5GB</totalSizeCap>
+            <cleanHistoryOnStart>true</cleanHistoryOnStart>
+        </rollingPolicy>
+        <encoder>
+            <pattern>${FILE_PATTERN}</pattern>
+            <charset>${CHARSET}</charset>
+        </encoder>
+    </appender>
+
+    <!-- 错误日志 -->
+    <appender name="error" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${FILE_PATH}/error.log</file>
+        <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+            <level>ERROR</level>
+        </filter>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${FILE_PATH}/%d{yyyy-MM-dd}/error.%i.log</fileNamePattern>
+            <!-- 按时间回滚的同时，按文件大小来回滚 -->
+            <timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+                <maxFileSize>100MB</maxFileSize>
+            </timeBasedFileNamingAndTriggeringPolicy>
+            <!-- 保留最近90天日志 -->
+            <maxHistory>90</maxHistory>
+            <!-- 日志文件上限达到该值会删除旧日志 -->
+            <totalSizeCap>5GB</totalSizeCap>
+            <!-- 是否在应用启动的时候删除历史日志 -->
+            <cleanHistoryOnStart>true</cleanHistoryOnStart>
+        </rollingPolicy>
+        <encoder>
+            <pattern>${FILE_PATTERN}</pattern>
+            <charset>${CHARSET}</charset>
+        </encoder>
+    </appender>
+
+    <!-- 设置第三方包日志级别 -->
+    <logger name="org.springframework" level="WARN"/>
+    <logger name="org.hibernate" level="WARN"/>
+    <logger name="org.apache.commons" level="WARN"/>
+    <logger name="springfox" level="WARN"/>
+    <logger name="org.apache" level="WARN"/>
+    <logger name="com.zaxxer.hikari" level="WARN"/>
+    <logger name="org.hibernate.type.descriptor.sql.BasicBinder" level="TRACE"/>
+
+    <!-- web层 -->
+    <logger name="com.github.xuchengen.web" level="INFO" addtivity="false">
+        <appender-ref ref="web"/>
+    </logger>
+
+    <root level="INFO">
+        <appender-ref ref="console"/>
+        <appender-ref ref="error"/>
+    </root>
+
+</configuration>
