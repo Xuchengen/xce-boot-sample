@@ -17,4 +17,15 @@ public interface RocketMQTopic {
     // 创建用户完整TOPIC
     String USER_CREATE_FULL = USER_TOPIC + ":" + USER_CREATE_TAG;
 
+    // 顺序消息标签
+    String ORDERLY_TAG = "ORDERLY-TAG";
+
+    // 顺序消息完整TOPIC
+    String ORDERLY_FULL = USER_TOPIC + ":" + ORDERLY_TAG;
+
+    // 顺序消息负载平衡标签
+    String ORDERLY_BALANCE_TAG = "ORDERLY-BALANCE-TAG";
+
+    // 顺序消息负载平衡完整TOPIC
+    String ORDERLY_BALANCE_FULL = USER_TOPIC + ":" + ORDERLY_BALANCE_TAG;
 }
