@@ -23,7 +23,7 @@ import java.util.Date;
  * <p>日期：2022-08-31 17:10
  **/
 @Component
-@RocketMQTxTopic(RocketMQTopic.USER_CREATE_FULL)
+@RocketMQTxTopic(value = RocketMQTopic.USER_CREATE_FULL)
 public class UserCreateTx implements RocketMQLocalTransactionListener {
 
     @Resource(name = "userDORepository")
@@ -37,6 +37,7 @@ public class UserCreateTx implements RocketMQLocalTransactionListener {
     public RocketMQLocalTransactionState executeLocalTransaction(Message msg, Object arg) {
         try {
             // TODO 这里的消息荷载应该由框架帮我们反序列化才对啊
+            // {"rocketmq_TOPIC":"user-topic","rocketmq_FLAG":0,"rocketmq_TRANSACTION_ID":"7F0000013D5018B4AAC29E1D335C0000","rocketmq_TAGS":"create-user-tag","id":"3ccd6f61-a105-44da-f9cb-435fba89156f","contentType":"text/plain;charset=UTF-8","timestamp":1661935913827}
             UserDO userDO = JSONObject.parseObject((byte[]) msg.getPayload(), UserDO.class);
             Date currentDate = new Date();
 
