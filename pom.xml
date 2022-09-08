@@ -16,6 +16,7 @@
         <module>xce-boot-helper</module>
         <module>xce-boot-web-base</module>
         <module>xce-boot-spring-batch</module>
+        <module>xce-boot-spaider</module>
     </modules>
 
     <properties>
