@@ -44,6 +44,21 @@
         </dependencies>
     </dependencyManagement>
 
+    <!-- 部署构件 -->
+    <distributionManagement>
+        <repository>
+            <id>${deploy.releases.id}</id>
+            <name>releases</name>
+            <url>${deploy.releases.url}</url>
+        </repository>
+        <snapshotRepository>
+            <id>${deploy.snapshots.id}</id>
+            <name>snapshots</name>
+            <url>${deploy.snapshots.url}</url>
+        </snapshotRepository>
+    </distributionManagement>
+    <!-- 部署构件 -->
+
     <!-- 项目构建 -->
     <build>
         <plugins>
