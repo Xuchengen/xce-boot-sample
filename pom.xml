@@ -14,6 +14,7 @@
         <module>xce-rocketmq</module>
         <module>xce-spider</module>
         <module>xce-spring-boot-root</module>
+        <module>xce-google-root</module>
     </modules>
 
     <properties>
