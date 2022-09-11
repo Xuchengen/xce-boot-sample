@@ -1,4 +1,4 @@
-package com.github.xuchengen.htmlunit;
+package com.github.xuchengen.test.htmlunit;
 
 import cn.hutool.core.io.resource.ResourceUtil;
 import cn.hutool.core.util.StrUtil;

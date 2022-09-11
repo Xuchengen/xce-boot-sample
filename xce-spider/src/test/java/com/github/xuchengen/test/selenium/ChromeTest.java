@@ -1,4 +1,4 @@
-package com.github.xuchengen.selenium;
+package com.github.xuchengen.test.selenium;
 
 import cn.hutool.core.util.StrUtil;
 import cn.hutool.core.util.URLUtil;

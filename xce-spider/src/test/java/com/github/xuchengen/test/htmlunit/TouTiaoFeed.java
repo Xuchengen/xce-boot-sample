@@ -1,4 +1,4 @@
-package com.github.xuchengen.htmlunit;
+package com.github.xuchengen.test.htmlunit;
 
 /**
  * <p>
