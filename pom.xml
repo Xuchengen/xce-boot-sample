@@ -16,6 +16,7 @@
         <module>xce-spring-boot-root</module>
         <module>xce-google-root</module>
         <module>xce-cloudinary</module>
+        <module>xce-other</module>
     </modules>
 
     <properties>
